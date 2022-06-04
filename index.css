@@ -1,0 +1,201 @@
+.main.home-game {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.main .header-game {
+  max-width: 400px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+.main.home-game .header-game .settings-button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  --rp-color: rgba(0, 0, 0, 0.2);
+  --rp-transition: 300;
+  position: relative;
+  overflow: hidden;
+}
+
+.main.home-game .header-game .settings-button > svg {
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+}
+
+.main.home-game .title-game {
+  max-width: 400px;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--display-1);
+}
+
+.main.home-game .welc-message {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  text-align: center;
+  font-size: var(--text-body);
+}
+
+.main.home-game .menu-game {
+  max-width: 400px;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.main.home-game .menu-game .btn.trash {
+  width: 120px;
+  height: 130px;
+  box-shadow: none;
+  font-size: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  --rp-color: rgba(255, 255, 255, 0.2);
+  --rp-transition: 300;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+  margin: 5px;
+  transition: box-shadow ease-in-out 300ms, border-radius ease-in-out 300ms;
+  text-transform: capitalize;
+}
+
+.btn.trash > .ionicon {
+  width: 55px;
+  height: 55px;
+}
+
+.btn.trash > * {
+  pointer-events: none;
+}
+
+.btn.trash[data-trash='paper'] {
+  background-color: var(--blue);
+}
+
+.btn.trash[data-trash='plastic'] {
+  background-color: var(--red);
+}
+
+.btn.trash[data-trash='metal'] {
+  background-color: var(--yellow);
+}
+.btn.trash[data-trash='glass'] {
+  background-color: var(--green);
+}
+.btn.trash[data-trash='organic'] {
+  background-color: var(--brown);
+}
+.btn.trash[data-trash='eletronic'] {
+  background-color: var(--orange);
+}
+
+.main.home-game .bottom-game {
+  max-width: 400px;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.main.home-game .bottom-game .about-message {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+  font-size: var(--text-body);
+}
+.main.home-game .bottom-game .about-message span {
+  font-size: calc(var(--display-1) + 15px);
+  color: var(--blue);
+}
+
+.main.home-game .bottom-game .text-comment {
+  width: 70%;
+  margin-top: 20px;
+  margin-left: 30%;
+  border-left: 4px solid var(--blue);
+  padding: 5px 0px 5px 10px;
+}
+.main.home-game .bottom-game .text-comment i.phrase {
+  color: black;
+  font-size: calc(var(--text-body) - 3px);
+  font-weight: 400;
+}
+.main.home-game .bottom-game .text-comment p.author {
+  text-align: end;
+  font-size: 12px;
+  color: #747185;
+  margin-top: 4px;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  background-color: #2c2c2c;
+  color: #FFFFFF;
+  font-size: var(--text-body);
+  border-radius: var(--border-radius-max) var(--border-radius-max) 0px 0px;
+}
+footer .row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  justify-content: center;
+}
+footer .row a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 5px 0px 5px 0px;
+}
+footer .row a > svg {
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  margin-right: 10px;
+}
+

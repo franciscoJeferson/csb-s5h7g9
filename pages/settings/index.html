@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link
+      rel="stylesheet"
+      href="/static/dev/console.css"
+      type="text/css"
+      media="all"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="../../styles/global.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>Configurações</title>
+</head>
+<body>
+  <section class="main settings-game">
+    <div class="overlay"></div>
+    <header class="header-settings">
+      <button class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48"
+            d="M328 112L184 256l144 144" />
+        </svg>
+      </button>
+      <h2>Configurações</h2>
+    </header>
+    <article class="content-settings">
+      <ul>
+        <li data-ref="menu-dificult" class="dificult-controller"><p>Dificuldade</p> <p class="dificult"></p></li>
+        <label class="music" for="music">
+          <p>musica</p>
+          <div class="button r" id="button-3">
+            <input checked type="checkbox" class="checkbox music-controller" id="music"/>
+            <div class="knobs"></div>
+            <div class="layer"></div>
+          </div>
+        </label>
+      </ul>
+    </article>
+    <article class="menu-dificult">
+      <div class="content">
+        <div class="row">
+          <h3>Dificuldade:</h3>
+          <button class="click-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                d="M368 368L144 144M368 144L144 368" />
+            </svg>
+          </button>
+        </div>
+        <div class="plans">
+          <label class="plan basic-plan" for="easy">
+            <div class="plan-content">
+              <div class="plan-details">
+                <span>fácil</span>
+              </div>
+            </div>
+            <div class="input-radio-dificult">
+              <input type="radio" name="dificult" id="easy">
+              <label for="easy"></label>
+            </div>
+          </label>
+          <label class="plan basic-plan" for="normal">
+            <div class="plan-content">
+              <div class="plan-details">
+                <span>normal</span>
+              </div>
+            </div>
+            <div class="input-radio-dificult">
+              <input type="radio" name="dificult" id="normal">
+              <label for="normal"></label>
+            </div>
+          </label>
+          <label class="plan basic-plan" for="hard">
+            <div class="plan-content">
+              <div class="plan-details">
+                <span>difícil</span>
+              </div>
+            </div>
+            <div class="input-radio-dificult">
+              <input type="radio" name="dificult" id="hard">
+              <label for="hard"></label>
+            </div>
+          </label>
+          <label class="plan basic-plan" for="impossible">
+            <div class="plan-content">
+              <div class="plan-details">
+                <span>impossível</span>
+              </div>
+            </div>
+            <div class="input-radio-dificult">
+              <input type="radio" name="dificult" id="impossible">
+              <label for="impossible"></label>
+            </div>
+          </label>
+        </div>
+      </div>
+    </article>
+  </section>
+  <script type="module" src="../../scripts/global.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

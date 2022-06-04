@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/global.css" />
+  <link rel="stylesheet" href="../../styles/images.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>Game</title>
+</head>
+
+<body>
+  <audio class="sound-track" hidden>
+    <source src="../../assets/sounds/sound-track.mp3" type="audio/mpeg">
+  </audio>
+  <section class="main game">
+    <div class="load">
+      <div class="message">
+        <p>Pegue apenas os items correspondentes a lixeira escolhida.</p>
+        <p>click em qualquer lugar da tela para iniciar o jogo!</p>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon sun" viewBox="0 0 512 512">
+      <path fill="var(--yellow)" stroke="var(--yellow)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"
+        d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94" />
+      <circle cx="256" cy="256" r="80" fill="var(--orange)" stroke="var(--orange)" stroke-linecap="round"
+        stroke-miterlimit="10" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon moon" viewBox="0 0 512 512">
+      <path
+        d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
+        fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon star star1" viewBox="0 0 512 512">
+      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="#FFFFFF" stroke="#FFFFFF"
+        stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon star star2" viewBox="0 0 512 512">
+      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="#FFFFFF" stroke="#FFFFFF"
+        stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon star star3" viewBox="0 0 512 512">
+      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="#FFFFFF" stroke="#FFFFFF"
+        stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon star star4" viewBox="0 0 512 512">
+      <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="#FFFFFF" stroke="#FFFFFF"
+        stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon cloud cloud1" viewBox="0 0 512 512">
+      <path
+        d="M400 240c-8.89-89.54-71-144-144-144-69 0-113.44 48.2-128 96-60 6-112 43.59-112 112 0 66 54 112 120 112h260c55 0 100-27.44 100-88 0-59.82-53-85.76-96-88z"
+        fill="#FFFFFF" stroke="#FFFFFF" stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon cloud cloud2" viewBox="0 0 512 512">
+      <path
+        d="M400 240c-8.89-89.54-71-144-144-144-69 0-113.44 48.2-128 96-60 6-112 43.59-112 112 0 66 54 112 120 112h260c55 0 100-27.44 100-88 0-59.82-53-85.76-96-88z"
+        fill="#FFFFFF" stroke="#FFFFFF" stroke-linejoin="round" stroke-width="32" />
+    </svg>
+    <header class="game-header">
+      <div class="score-container">
+        <p class="score">Pontuação: <span>0</span></p>
+      </div>
+      <div class="missed-container">
+        <p class="missed">Faltas: <span>0</span>/8</p>
+      </div>
+    </header>
+    <div class="menu-game-finish">
+      <div class="content">
+        <div class="collector"></div>
+        <div class="row">
+          <div class="final-score">
+            <h2>Pontuação:</h2>
+            <h1 class="punctuation">
+              0
+            </h1>
+          </div>
+        </div>
+        <div class="row linear">
+          <button class="change-trash aninmate-buttons">Trocar de lixeira</button>
+          <button class="play-again aninmate-buttons">Jogar novamente</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="firework">
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+      </div>
+      <div class="firework" style="transform: translateY(-100px)">
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+      </div>
+      <div class="firework">
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+      </div>
+      <div class="firework" style="transform: translateY(-100px)">
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark red"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+        <div class="explosion"><div class="spark blue"></div></div>
+        <div class="explosion"><div class="spark green"></div></div>
+        <div class="explosion"><div class="spark yellow"></div></div>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="../../scripts/global.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+.main.settings-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main.settings-game .header-settings {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  grid-row: 1;
+  grid-column: 1;
+}
+.main.settings-game .header-settings .back-button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  --rp-color: rgba(0, 0, 0, 0.2);
+  --rp-transition: 300;
+  position: relative;
+  overflow: hidden;
+}
+
+.main.settings-game .header-settings .back-button > svg {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
+.main.settings-game .header-settings h2 {
+  font-size: calc(var(--display-3) - 4px );
+  margin-left: 7px;
+}
+
+.main.settings-game .content-settings {
+  width: 100%;
+  height: calc(100% - 70px);
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  grid-row: 2;
+  grid-column: 1;
+}
+.main.settings-game .content-settings ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.main.settings-game .content-settings ul li,
+.main.settings-game .content-settings ul label {
+  width: 100%;
+  height: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  --rp-color: rgba(0, 0, 0, 0.2);
+  --rp-transition: 300;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--border-radius-max);
+  text-transform: capitalize;
+  font-size: var(--text-body);
+  padding: 5px 15px;
+}
+.main.settings-game .content-settings ul li .dificult {
+  font-size: calc(var(--text-body) - 4px);
+  color: #9C9C9C;
+  text-transform: capitalize;
+}
+.main.settings-game .content-settings ul li > * {
+  pointer-events: none;
+}
+/* overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity linear 300ms;
+  z-index: 10;
+}
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+/* menu dificult */
+.main.settings-game .menu-dificult {
+  position: fixed;
+  left: 2.5%;
+  right: 2.5%;
+  border-radius: var(--border-radius-max);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: 95%;
+  bottom: -100%;
+  transition: bottom linear 300ms;
+  z-index: 11;
+}
+.main.settings-game .menu-dificult.show {
+  bottom: 2%;
+}
+.main.settings-game .menu-dificult .content {
+  max-width: 400px;
+  height: max-content;
+  width: 100%;
+  padding: 20px;
+  border-radius: var(--border-radius-max);
+  background-color: #FFFFFF;
+}
+.main.settings-game .menu-dificult .content .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main.settings-game .menu-dificult .content .row h3 {
+  font-size: var(--display-3);
+}
+.main.settings-game .menu-dificult .content .row .click-overlay {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  --rp-color: rgba(0, 0, 0, 0.2);
+  --rp-transition: 300;
+  position: relative;
+  overflow: hidden;
+}
+.main.settings-game .menu-dificult .content .row .click-overlay > svg {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+.main.settings-game .menu-dificult .content .plans {
+  background-color: transparent;
+}
+
+.main.settings-game .menu-dificult .content .plans .plan {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(var(--text-body) - 4px);
+  text-transform: capitalize;
+}
+.input-radio-dificult input[type=radio] {
+  display: none;
+}
+.input-radio-dificult input[type=radio]:checked + label {
+  border-color: var(--blue);
+}
+.input-radio-dificult input[type=radio]:checked + label:after {
+  transform: scale(0.7);
+  background: var(--blue);
+}
+
+.input-radio-dificult label {
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  background: #f5f5f5;
+  border: 3px solid #c5c2c2;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.input-radio-dificult label:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 300%;
+  width: 300%;
+  top: -100%;
+  left: -100%;
+  z-index: -1;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.input-radio-dificult label:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: var(--blue);
+  border-radius: 50%;
+  background-size: contain;
+  transform: scale(0);
+  transition: 0.2s;
+}
+.input-radio-dificult label:active:before {
+  background: #bfbfbf;
+}
+/* toggle */
+.button {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: var(--border-radius-max);
+}
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.knobs {
+  z-index: 2;
+}
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 300ms linear all;
+  z-index: 1;
+}
+
+/* Button 3 */
+#button-3 .knobs:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  width: 15px;
+  height: 5px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: var(--red);
+  border-radius: var(--border-radius-max);
+  transition: 300ms ease-in-out all;
+}
+
+#button-3 .checkbox:checked + .knobs:before {
+  content: "";
+  left: 27px;
+  background-color: var(--blue);
+}
+
+#button-3 .checkbox:checked ~ .layer {
+  background-color: #fcebeb;
+}
+
+
+
+

@@ -1,0 +1,473 @@
+.main.game {
+  background-color: var(--ligth-blue);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color linear 300ms;
+  overflow: hidden;
+}
+
+.main.game.night {
+  background-color: var(--darken-blue);
+}
+
+.main.game .load {
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity linear 300ms;
+  z-index: 1000;
+  pointer-events: all;
+}
+.main.game .load > * {
+  pointer-events: none;
+}
+.main.game .load.close {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes close {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+.main.game .load .message {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.main.game .load .message p {
+  text-align: center;
+  font-size: var(--text-body);
+  color: #FFFFFF;
+}
+.main.game .load .time h1 {
+  font-size: 40px;
+  color: var(--green);
+  text-align: center;
+}
+
+.main.game .sun {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100px;
+  height: min-content;
+  opacity: 0;
+}
+
+.main.game .sun.anim {
+  animation: anim linear 30000ms forwards;
+}
+
+.main.game .moon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+  height: min-content;
+  opacity: 0;
+}
+.main.game .moon.anim {
+  animation: anim linear 30000ms forwards;
+}
+.main.game .star {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  transition: opacity linear 300ms;
+  opacity: 0;
+  animation: none;
+}
+
+.main.game.night .star {
+  opacity: 1;
+  animation: blink linear 2000ms infinite;
+  transition: 300ms linear;
+}
+
+.main.game .star1 {
+  top: 30%;
+  left: 20%;
+}
+.main.game .star2 {
+  top: 40%;
+  left: 50%;
+}
+.main.game .star3 {
+  top: 60%;
+  right: 20%;
+}
+.main.game .star4 {
+  top: 20%;
+  right: 10%;
+}
+
+
+
+@keyframes anim {
+  0% {
+    right: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    right: calc(100% - 100px);
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.main.game .cloud {
+  width: 100px;
+  height: min-content;
+  position:  absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -100px;
+  animation: cloud-move linear 10000ms infinite;
+  transition: opacity linear 300ms;
+  opacity: 1;
+}
+.main.game.night .cloud {
+  opacity: 0;
+  animation: none;
+}
+.main.game .cloud.cloud1 {
+  top: 30px;
+  animation-delay: 0ms;
+}
+.main.game .cloud.cloud2 {
+  top: 110px;
+  animation-delay: 2000ms;
+}
+
+@keyframes cloud-move {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 100px);
+    opacity: 0;
+  }
+}
+
+.main .game-header {
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  gap: 10px;
+}
+
+.main.game .game-header .score-container {
+  display: flex;
+}
+
+.main .game-header .score-container .score {
+  color: var(--orange);
+  font-size: var(--display-2);
+}
+
+.main .game-header .missed-container .missed {
+  color: var(--red);
+  font-size: var(--display-2);
+}
+
+.main .menu-game-finish {
+  width: 95%;
+  position: fixed;
+  bottom: -100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  left: 2.5%;
+  right: 2.5%;
+  transition: bottom linear 300ms;
+}
+
+.main .menu-game-finish .content {
+  max-width: 400px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-max);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5px 15px 5px;
+  overflow: hidden;
+}
+
+.main .menu-game-finish .content .collector {
+  position: absolute;
+  top: 20px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main .menu-game-finish .content .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 15px 5px 15px;
+  gap: 10px;
+}
+.main .menu-game-finish .content .row.linear {
+  flex-direction: row;
+}
+.main .menu-game-finish .content .row .final-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main .menu-game-finish .content .row .final-score h1 {
+  font-size: calc(var(--display-1) + 10px);
+  -webkit-text-stroke: 1px black;
+  color: var(--yellow);
+  
+}
+.main .menu-game-finish .content .row .final-score h2 {
+  font-size: var(--display-2);
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+
+.main .menu-game-finish .content .row button {
+  width: 100%;
+  height: 70px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--border-radius-max);
+  color: #ffffff;
+  outline: none;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  --rp-color: rgba(255, 255, 255, 0.2);
+  --rp-transition: 300;
+  font-size: var(--text-body);
+  transition: box-shadow ease-in-out 300ms, border-radius ease-in-out 300ms;
+  text-transform: capitalize;
+}
+
+.main .menu-game-finish .content .row button.play-again {
+  background-color: #0085ff;
+}
+
+.main .menu-game-finish .content .row button.change-trash {
+  background-color: #ff8a00;
+}
+
+.main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 11;
+}
+
+.item {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: animate linear var(--time-transition-drop-item),
+  down-anim var(--time-transition-drop-item) linear infinite;
+  will-change: top;
+}
+.item > * {
+  pointer-events: none;
+}
+  
+@keyframes animate {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 100%;
+  }
+}
+@keyframes down-anim {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+
+
+/* fireworks */
+.firework {
+  position: relative;
+  top: 0px;
+  left: 0px;
+	margin: 0px 50px;
+}
+ .firework .explosion {
+  position: absolute;
+  top: 0;
+  width: 5px;
+  height: 20px;
+  opacity: 0;
+  transform-origin: top center;
+	will-change: transform;
+  animation: explosion 1s linear;
+}
+ .firework .explosion:nth-child(1) {
+          transform: rotate(0deg);
+}
+ .firework .explosion:nth-child(2) {
+          transform: rotate(90deg);
+}
+ .firework .explosion:nth-child(3) {
+          transform: rotate(180deg);
+}
+ .firework .explosion:nth-child(4) {
+          transform: rotate(-90deg);
+}
+ .firework .explosion:nth-child(5) {
+          transform: rotate(45deg);
+}
+ .firework .explosion:nth-child(6) {
+          transform: rotate(-45deg);
+}
+ .firework .explosion:nth-child(7) {
+          transform: rotate(135deg);
+}
+ .firework .explosion:nth-child(8) {
+          transform: rotate(225deg);
+}
+
+ .firework .explosion .spark{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	will-change: transform;
+	animation: explosion2 1s linear;
+}
+
+
+ .firework .explosion .spark.red {
+  background-color: #E91E63;
+}
+ .firework .explosion .spark.blue {
+  background-color: skyblue;
+}
+ .firework .explosion .spark.green {
+  background-color: limegreen;
+}
+ .firework .explosion .spark.yellow {
+  background-color: yellow;
+}
+ .firework .explosion .spark.purple {
+  background-color: purple;
+}
+
+@keyframes explosion{
+	0%{
+		height: 0px;
+		opacity: 0;
+	}
+	50%{
+		height: 25px;
+		opacity: 1;
+	}
+	100%{
+    display: none;
+	}
+}
+@keyframes explosion2{
+	0%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(5px);
+	}
+	75%{
+		transform: translateY(50px);
+	}
+	100%{
+		transform: translateY(70px);
+	}
+}
