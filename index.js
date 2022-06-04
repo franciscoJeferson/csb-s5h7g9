@@ -25,7 +25,7 @@ const initGame = (trash) => {
   } else if (trash === "eletronic") {
     localStorage.setItem("trash", JSON.stringify(game.trashs.eletronic));
   }
-  window.location.pathname = "/pages/game/index.html";
+  window.location.pathname += "/pages/game/index.html";
 };
 
 btnsTrashs.forEach((item) => {
